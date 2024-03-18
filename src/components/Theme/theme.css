@@ -31,6 +31,7 @@ span {
   margin-top: 3rem;
 }
 
+
 @media (max-width: 768px) {
 
   .theme_container {
@@ -47,4 +48,13 @@ span {
    display: flex;
    flex-direction: column;
   }
+}
+
+
+@media screen and (min-width: 1200px) {
+  .theme_container {
+    background-size: cover;
+    background-position: center; 
+    width: 232.1vh;
+   }
 }
