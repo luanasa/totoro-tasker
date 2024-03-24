@@ -1,9 +1,14 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 import Folder from '../Folder/folder';
 import './bluehome.css';
+import BackArrow from '../BackArrow/backarrow';
 
 function BlueHome() {
   return (
     <div className="bluehome_container">
+      <BackArrow url="/"  />
       <div className="header">
         <h1>hello <br></br>(seu nome).</h1>
         <div className="clock">
