@@ -1,9 +1,9 @@
 import Folder from '../Folder/folder';
-import './bluehome.css';
+import './darkhome.css';
 import BackArrow from '../BackArrow/backarrow';
 
-function BlueHome() {
-  document.body.classList.add('blue-home-body');
+function DarkHome() {
+  document.body.classList.add('dark-home-body');
   return (
     <div className="home_container">
       <BackArrow url="/"  />
@@ -13,19 +13,19 @@ function BlueHome() {
           <p>08:00</p>
           <span>Saturday, 4 March 2023</span>
         </div>
-        <img src="./bluesky.png" alt="Blue Sky" />
+        <img src="./darksky.png" alt="Dark Sky" />
       </div>
       <div className="main">
         <div className="year">
           <span>2024</span>
-          <img src="./bluethemeimg.png" alt="Coffee and book" />
+          <img src="./darkthemeimg.png" alt="Coffee and book" />
         </div>
-        <Folder imageUrl="./folder.svg" text="to do" to="/bluehome" />
-        <Folder imageUrl="./folder.svg" text="planner" to="/bluehome" />
-        <Folder imageUrl="./folder.svg" text="water tracker" to="/bluehome" />
+        <Folder imageUrl="./darkfolder.svg" text="to do" to="/darkhome" />
+        <Folder imageUrl="./darkfolder.svg" text="planner" to="/darkhome" />
+        <Folder imageUrl="./darkfolder.svg" text="water tracker" to="/darkhome" />
       </div>
     </div>
   );
 }
 
-export default BlueHome;
+export default DarkHome;

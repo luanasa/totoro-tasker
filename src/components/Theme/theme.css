@@ -20,10 +20,11 @@ a {
   background-size: cover;
   background-position: center; 
   height: 100vh;
-  width: 221vh;
+  width: 100vh;
 
   color: #ffff;
 }
+
 
 p {
   font-family: "Barlow Semi Condensed", sans-serif;

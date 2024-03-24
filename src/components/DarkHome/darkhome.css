@@ -1,10 +1,10 @@
 :root {
-  --main-color: #72A0C4;
+  --main-color: #231F20;
   --text-color: #EFECE5;
 }
 
-body.blue-home-body {
-  background-color: #72A0C4;
+body.dark-home-body {
+  background-color: var(--main-color);
   color: var(--text-color);
 }
 

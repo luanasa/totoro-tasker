@@ -3,9 +3,10 @@ import './pinkhome.css';
 import BackArrow from '../BackArrow/backarrow';
 
 function PinkHome() {
+  document.body.classList.add('pink-home-body');
   return (
-    <div className="home_container">
-      <BackArrow url="/"  />
+    <div className="pinkhome_container">
+      <BackArrow url="/" className="pink-arrow" />
       <div className="header">
         <h1>hello <br></br>(seu nome).</h1>
         <div className="clock">
