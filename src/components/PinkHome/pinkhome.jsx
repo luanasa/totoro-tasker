@@ -1,14 +1,33 @@
 import Folder from '../Folder/folder';
 import './pinkhome.css';
 import BackArrow from '../BackArrow/backarrow';
+import { useEffect, useState } from 'react';
 
 function PinkHome() {
   document.body.classList.add('pink-home-body');
+
+  const [userName, setUserName] = useState("");
+
+  // Verifica se o nome do usuário já foi armazenado em algum lugar
+  useEffect(() => {
+    const storedName = localStorage.getItem("userName");
+    if (storedName) {
+      setUserName(storedName); 
+    } else {
+      // Se não encontrado, exibe o prompt para o usuário digitar o nome
+      const name = prompt("What's your name:");
+      if (name !== null) {
+        setUserName(name);
+        localStorage.setItem("userName", name);
+      }
+    }
+  }, []); // Executa apenas uma vez quando o componente é montado
+
   return (
     <div className="pinkhome_container">
       <BackArrow url="/" className="pink-arrow" />
       <div className="header">
-        <h1>hello <br></br>(seu nome).</h1>
+        <h1>hello <span>{userName ? userName : "you."}</span></h1>
         <div className="clock">
           <p>08:00</p>
           <span>Saturday, 4 March 2023</span>
