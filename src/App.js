@@ -3,6 +3,7 @@ import Theme from "./components/Theme/theme";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import BlueHome from "./components/BlueHome/bluehome";
+import PinkHome from "./components/PinkHome/pinkhome";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
     <Routes>
     <Route path="/" element={<Theme />} />
       <Route path="/bluehome" element={<BlueHome />} />
+      <Route path="/pinkhome" element={<PinkHome />} />
     </Routes>
     </div>
     </Router>
