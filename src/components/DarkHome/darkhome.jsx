@@ -65,7 +65,7 @@ function DarkHome() {
           <span>2024</span>
           <img src="./darkthemeimg.png" alt="Coffee and book" />
         </div>
-        <Folder imageUrl="./darkfolder.svg" text="to do" to="/darkhome" />
+        <Folder imageUrl="./darkfolder.svg" text="to do" to="/TodoList" />
         <Folder imageUrl="./darkfolder.svg" text="planner" to="/darkhome" />
         <Folder imageUrl="./darkfolder.svg" text="water tracker" to="/darkhome" />
       </div>

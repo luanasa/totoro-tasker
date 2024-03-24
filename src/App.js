@@ -5,6 +5,7 @@ import './App.css';
 import BlueHome from "./components/BlueHome/bluehome";
 import PinkHome from "./components/PinkHome/pinkhome";
 import DarkHome from "./components/DarkHome/darkhome";
+import TodoList from "./components/TodoList/todolist";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/bluehome" element={<BlueHome />} />
           <Route path="/pinkhome" element={<PinkHome />} />
           <Route path="/darkhome" element={<DarkHome />} />
+          <Route path="/todolist" element={<TodoList />} />
         </Routes>
       </div>
     </Router>

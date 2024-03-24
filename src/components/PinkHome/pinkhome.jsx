@@ -65,7 +65,7 @@ function PinkHome() {
           <span>2024</span>
           <img src="./pinkthemeimg.png" alt="Coffee and book" />
         </div>
-        <Folder imageUrl="./pinkfolder.svg" text="to do" to="/pinkhome" />
+        <Folder imageUrl="./pinkfolder.svg" text="to do" to="/TodoList" />
         <Folder imageUrl="./pinkfolder.svg" text="planner" to="/pinkhome" />
         <Folder imageUrl="./pinkfolder.svg" text="water tracker" to="/pinkhome" />
       </div>

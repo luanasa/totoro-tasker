@@ -65,7 +65,7 @@ function BlueHome() {
           <span>2024</span>
           <img src="./bluethemeimg.png" alt="Coffee and book" />
         </div>
-        <Folder imageUrl="./folder.svg" text="to do" to="/bluehome" />
+        <Folder imageUrl="./folder.svg" text="to do" to="/TodoList" />
         <Folder imageUrl="./folder.svg" text="planner" to="/bluehome" />
         <Folder imageUrl="./folder.svg" text="water tracker" to="/bluehome" />
       </div>
