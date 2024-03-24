@@ -1,15 +1,11 @@
 
 body.pink-home-body {
-  background-color: #f0eeee;
-  color: #F69AA0;
+  background-color: #231F20;
+  color: #fff;
 }
 
 .pink-arrow {
   color: pink;
-}
-
-.pink-home-body p {
-  color: #F69AA0;
 }
 
 img {
@@ -32,16 +28,23 @@ img {
 
 .pinkhome_container .header h1{
   font-size: 50px;
+  color: #F69AA0;
 }
 
 .pinkhome_container .header p {
   font-size: 50px;
   margin-bottom: 1rem;
+  color: #F69AA0;
+}
+
+.pinkhome_container .header .clock p{
+  color: #fff;
 }
 
 .pinkhome_container .header .clock span{
   font-size: 10px;
   font-weight: 700;
+  color: #F69AA0;
 }
 
 .pinkhome_container .main {
@@ -58,10 +61,7 @@ img {
 .pinkhome_container .year span {
   font-size: 15px;
   text-decoration: underline;
-}
-
-.home_container .main p {
-  color: var(--text-color);
+  color: #F69AA0;
 }
 
 /* Mobile */

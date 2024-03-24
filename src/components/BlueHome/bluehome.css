@@ -1,10 +1,10 @@
 :root {
-  --main-color: #72A0C4;
-  --text-color: #EFECE5;
+  --main-color: #231F20;
+  --text-color: #72A0C4;
 }
 
 body.blue-home-body {
-  background-color: #72A0C4;
+  background-color: var(--main-color);
   color: var(--text-color);
 }
 
@@ -28,6 +28,7 @@ img {
 
 .header h1{
   font-size: 50px;
+  color: #72A0C4;
 }
 
 .header p {
@@ -38,12 +39,17 @@ img {
 .header .clock span{
   font-size: 10px;
   font-weight: 700;
+  color: #72A0C4;
 }
 
 .main {
   display: flex;
   gap: 3rem;
   align-items: center;
+}
+
+.main span {
+  color: #72A0C4;
 }
 
 .year {
