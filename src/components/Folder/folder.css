@@ -1,0 +1,16 @@
+.folders ul{
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 4rem;
+}
+.folders ul li {
+  margin-right: -1rem;
+}
+
+.folders img:hover {
+  opacity: 0.5;
+}

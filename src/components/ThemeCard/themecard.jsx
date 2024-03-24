@@ -1,11 +1,13 @@
+import { Link } from 'react-router-dom'; 
+
 import './themecard.css';
 
-function ThemeCard({ imageUrl, text }) {
+function ThemeCard({ imageUrl, text, to }) { 
   return (
-    <div className="card_container">
+    <Link to={to} className="card_container"> {}
       <img src={imageUrl} alt="" />
       <p>{text}</p>
-    </div>
+    </Link>
   );
 }
 
