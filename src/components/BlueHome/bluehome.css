@@ -56,3 +56,33 @@ img {
   text-decoration: underline;
   font-weight: 700;
 }
+
+.mobile_alert {
+  display: none;
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .clock {
+    margin-top: -7rem;
+    margin-bottom: -1rem;
+  }
+
+  .home_container .main {
+    display: none;
+  }
+
+  .mobile_alert {
+    display: block;
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+  }
+}

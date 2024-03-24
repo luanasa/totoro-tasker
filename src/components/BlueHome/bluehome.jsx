@@ -24,6 +24,9 @@ function BlueHome() {
         <Folder imageUrl="./folder.svg" text="planner" to="/bluehome" />
         <Folder imageUrl="./folder.svg" text="water tracker" to="/bluehome" />
       </div>
+      <div className="mobile_alert">
+        <p>Hey You! <br></br>Go to your desktop to start using the app!</p>
+      </div>
     </div>
   );
 }
