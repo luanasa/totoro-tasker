@@ -7,6 +7,21 @@ function BlueHome() {
   document.body.classList.add('blue-home-body');
 
   const [userName, setUserName] = useState("");
+  const [currentTime, setCurrentTime] = useState("");
+
+  // Function to update the current time
+  const updateClock = () => {
+    const date = new Date();
+    const options = {
+      weekday: 'long',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+    };
+    const formattedTime = date.toLocaleString('en-US', options);
+    setCurrentTime(formattedTime);
+  };
 
   // Verifica se o nome do usuário já foi armazenado em algum lugar
   useEffect(() => {
@@ -21,6 +36,17 @@ function BlueHome() {
         localStorage.setItem("userName", name);
       }
     }
+    
+    // Atualiza o horário inicial
+    updateClock();
+
+    // Atualiza o horário a cada minuto
+    const interval = setInterval(() => {
+      updateClock();
+    }, 60000); // 60000 milliseconds = 1 minute
+
+    // Limpa o intervalo quando o componente é desmontado
+    return () => clearInterval(interval);
   }, []); // Executa apenas uma vez quando o componente é montado
 
   return (
@@ -29,8 +55,8 @@ function BlueHome() {
       <div className="header">
         <h1>hello <span>{userName ? userName : "you."}</span></h1>
         <div className="clock">
-          <p>08:00</p>
-          <span>Saturday, 4 March 2023</span>
+          <p>{currentTime.split(',')[1]}</p>
+          <span>{currentTime.split(',')[0]}</span>
         </div>
         <img src="./bluesky.png" alt="Blue Sky" />
       </div>

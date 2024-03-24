@@ -36,6 +36,14 @@ img {
   margin-bottom: 1rem;
 }
 
+.header .clock {
+  text-align: center;
+}
+
+.header .clock p{
+  font-size: 30px;
+}
+
 .header .clock span{
   font-size: 10px;
   font-weight: 700;

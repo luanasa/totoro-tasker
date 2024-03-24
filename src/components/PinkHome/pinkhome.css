@@ -37,8 +37,13 @@ img {
   color: #F69AA0;
 }
 
+.blue-home-body .header .clock {
+  text-align: center;
+}
+
 .pinkhome_container .header .clock p{
   color: #fff;
+  font-size: 30px;
 }
 
 .pinkhome_container .header .clock span{

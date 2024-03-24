@@ -31,8 +31,13 @@ img {
   margin-bottom: 1rem;
 }
 
+.blue-home-body .header .clock {
+  text-align: center;
+}
+
 .blue-home-body .header .clock p{
   color: #fff;
+  font-size: 30px;
 }
 
 .blue-home-body .header .clock span{
