@@ -67,7 +67,7 @@ function PinkHome() {
         </div>
         <Folder imageUrl="./pinkfolder.svg" text="to do" to="/TodoList" />
         <Folder imageUrl="./pinkfolder.svg" text="planner" to="/pinkhome" />
-        <Folder imageUrl="./pinkfolder.svg" text="water tracker" to="/pinkhome" />
+        <Folder imageUrl="./pinkfolder.svg" text="water tracker" to="/watertracker" />
       </div>
       <div className="mobile_alert">
         <p>Hey You! <br></br>Go to your desktop to start using the app!</p>

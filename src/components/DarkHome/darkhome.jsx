@@ -67,7 +67,7 @@ function DarkHome() {
         </div>
         <Folder imageUrl="./darkfolder.svg" text="to do" to="/TodoList" />
         <Folder imageUrl="./darkfolder.svg" text="planner" to="/darkhome" />
-        <Folder imageUrl="./darkfolder.svg" text="water tracker" to="/darkhome" />
+        <Folder imageUrl="./darkfolder.svg" text="water tracker" to="/watertracker" />
       </div>
       <div className="mobile_alert">
         <p>Hey You! <br></br>Go to your desktop to start using the app!</p>

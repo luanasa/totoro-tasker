@@ -67,7 +67,7 @@ function BlueHome() {
         </div>
         <Folder imageUrl="./folder.svg" text="to do" to="/TodoList" />
         <Folder imageUrl="./folder.svg" text="planner" to="/bluehome" />
-        <Folder imageUrl="./folder.svg" text="water tracker" to="/bluehome" />
+        <Folder imageUrl="./folder.svg" text="water tracker" to="/watertracker" />
       </div>
       <div className="mobile_alert">
         <p>Hey You! <br></br>Go to your desktop to start using the app!</p>
