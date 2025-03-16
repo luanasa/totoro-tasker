@@ -1,4 +1,5 @@
 # Totoro Tasker
 
-https://totorotasker.netlify.app/
-![image](https://github.com/luanasa/totoro-tasker/assets/38231334/64b307d6-0cd8-4e0c-a4a0-36059b20dba2)
+https://totoro-tasker.vercel.app/
+
+![frame_safari_dark](https://github.com/user-attachments/assets/eaf1b45d-5110-441d-8f8f-3dc5c1710ed0)
