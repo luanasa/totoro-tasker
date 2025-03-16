@@ -8,18 +8,19 @@ import { useState } from 'react';
 
 function App() {
   const [isTotoroAwake, setIsTotoroAwake] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   return (
     <BrowserRouter>
       <div className="min-h-screen">
         <Routes>
-          <Route path="/" element={<TodoApp setIsTotoroAwake={setIsTotoroAwake} />} />
-          <Route path="/planner" element={<Planner />} />
-          <Route path="/water-tracker" element={<WaterTracker />} />
+          <Route path="/" element={<TodoApp setIsTotoroAwake={setIsTotoroAwake} isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />} />
+          <Route path="/planner" element={<Planner isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />} />
+          <Route path="/water-tracker" element={<WaterTracker isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />} />
         </Routes>
         
         <TotoroMascot isAwake={isTotoroAwake} />
-        <Navigation />
+        <Navigation isDarkMode={isDarkMode} />
       </div>
     </BrowserRouter>
   );

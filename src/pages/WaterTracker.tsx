@@ -1,30 +1,55 @@
 import { motion } from 'framer-motion';
-import { Droplets } from 'lucide-react';
+import { Droplets, Moon, Sun } from 'lucide-react';
 import { useState } from 'react';
 
-export function WaterTracker() {
-  const [glasses, setGlasses] = useState(0);
-  const goal = 8;
+interface WaterTrackerProps {
+  isDarkMode: boolean;
+  setIsDarkMode: (isDarkMode: boolean) => void;
+}
 
-  const addGlass = () => {
-    if (glasses < goal) {
-      setGlasses(glasses + 1);
+export function WaterTracker({ isDarkMode, setIsDarkMode }: WaterTrackerProps) {
+  const [milliliters, setMilliliters] = useState(0);
+  const goal = 2000; // 2 liters in milliliters
+  const glassSize = 250; // 250ml per glass
+
+  const addWater = () => {
+    if (milliliters < goal) {
+      setMilliliters(Math.min(milliliters + glassSize, goal));
     }
   };
 
-  const resetGlasses = () => {
-    setGlasses(0);
+  const resetWater = () => {
+    setMilliliters(0);
   };
 
-  const progress = (glasses / goal) * 100;
+  const progress = (milliliters / goal) * 100;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-cyan-50 p-4 pb-32">
-      <div className="max-w-md mx-auto text-center">
-        <h1 className="text-3xl font-bold text-gray-800 mb-8">Water Tracker</h1>
+    <div className={`min-h-screen transition-colors duration-300 pb-32 ${
+      isDarkMode 
+        ? 'bg-gradient-to-b from-gray-900 to-gray-800' 
+        : 'bg-gradient-to-b from-blue-50 to-cyan-50'
+    }`}>
+      <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        onClick={() => setIsDarkMode(!isDarkMode)}
+        className={`fixed top-4 left-4 p-2 rounded-full ${
+          isDarkMode ? 'bg-gray-700 text-yellow-300' : 'bg-yellow-400 text-gray-900'
+        }`}
+      >
+        {isDarkMode ? <Moon /> : <Sun />}
+      </motion.button>
+
+      <div className="max-w-md mx-auto text-center p-4">
+        <h1 className={`text-3xl font-bold mb-8 ${
+          isDarkMode ? 'text-white' : 'text-gray-800'
+        }`}>Water Tracker</h1>
 
         <motion.div
-          className="bg-white p-6 rounded-lg shadow-lg mb-8"
+          className={`p-6 rounded-lg shadow-lg mb-8 ${
+            isDarkMode ? 'bg-gray-800' : 'bg-white'
+          }`}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
@@ -34,10 +59,30 @@ export function WaterTracker() {
               initial={{ height: 0 }}
               animate={{ height: `${progress}%` }}
               transition={{ duration: 0.5 }}
-            />
+              style={{
+                background: isDarkMode
+                  ? 'linear-gradient(180deg, #60A5FA 0%, #3B82F6 100%)'
+                  : 'linear-gradient(180deg, #93C5FD 0%, #60A5FA 100%)'
+              }}
+            >
+              <motion.div
+                className="absolute top-0 left-0 right-0 h-2 bg-white/20"
+                animate={{
+                  y: [-2, 2, -2],
+                  opacity: [0.2, 0.4, 0.2]
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+            </motion.div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-4xl font-bold text-gray-800">
-                {glasses}/{goal}
+              <span className={`text-2xl font-bold ${
+                isDarkMode ? 'text-white' : 'text-gray-800'
+              }`}>
+                {milliliters}/{goal}ml
               </span>
             </div>
           </div>
@@ -46,25 +91,33 @@ export function WaterTracker() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={addGlass}
-              className="w-full bg-blue-500 text-white py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-blue-600 transition-colors"
-              disabled={glasses >= goal}
+              onClick={addWater}
+              className={`w-full py-3 rounded-lg flex items-center justify-center gap-2 transition-colors ${
+                isDarkMode
+                  ? 'bg-blue-600 text-white hover:bg-blue-700'
+                  : 'bg-blue-500 text-white hover:bg-blue-600'
+              }`}
+              disabled={milliliters >= goal}
             >
               <Droplets className="w-6 h-6" />
-              Add Glass
+              Add {glassSize}ml
             </motion.button>
 
             <button
-              onClick={resetGlasses}
-              className="w-full py-2 text-gray-500 hover:text-gray-700 transition-colors"
+              onClick={resetWater}
+              className={`w-full py-2 transition-colors ${
+                isDarkMode
+                  ? 'text-gray-400 hover:text-gray-300'
+                  : 'text-gray-500 hover:text-gray-700'
+              }`}
             >
               Reset
             </button>
           </div>
         </motion.div>
 
-        <div className="text-gray-600">
-          <p className="mb-4">Daily Goal: {goal} glasses</p>
+        <div className={isDarkMode ? 'text-gray-300' : 'text-gray-600'}>
+          <p className="mb-4">Daily Goal: {goal}ml (2 liters)</p>
           <p>
             Progress: {Math.round(progress)}%
             {progress >= 100 && " 🎉"}
